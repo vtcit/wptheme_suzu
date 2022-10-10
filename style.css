@@ -1,0 +1,537 @@
+/*
+Theme Name: cit_service
+Author: VT.CIT
+Version: 1.0
+Text Domain: cit_service
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+a {
+    color: #0144b7;
+}
+a:hover,
+a:focus {
+    color: #2977ff;
+}
+.heading a {
+    color: #0144b7;
+}
+.heading a:hover,
+.heading a:focus {
+    color: #273644;
+}
+html {
+    height: 100%;
+}
+body {
+    position: relative;
+    color: #555;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+}
+#main {
+    padding-bottom: 30px;
+}
+#main-footer {
+}
+#main-footer a {
+}
+#main-footer a:hover {
+}
+.entry-meta {
+    margin-bottom: 15px;
+    color: #777;
+}
+.blog .more-link,
+.category .more-link {
+    display: none;
+}
+.post-list .item {
+    margin: 10px 0;
+}
+.post-list .post-item + .post-item {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #ebebeb;
+}
+
+.footer-menu {
+    padding: 30px 0 20px;
+    background-color: #fff;
+    color: #6b7278;
+}
+.footer-menu a {
+    color: #6b7278;
+}
+.footer-copy {
+    color: #c4c9cf;
+    background-color: #4b5b6a;
+    padding: 5px 0;
+    font-size: 0.8em;
+    text-align: center;
+}
+.footer-copy a {
+    color: #c4c9cf;
+}
+
+.navbar.navbar-inverse {
+    background-color: #0144b7;
+}
+.navbar-brand.active .text,
+.navbar-brand:hover .text,
+.navbar-inverse .navbar-nav > li:hover,
+.navbar-inverse .navbar-nav > li:focus,
+.navbar-inverse .navbar-nav > .active,
+.navbar-inverse .navbar-nav > .active:hover,
+.navbar-inverse .navbar-nav > .active:focus,
+.navbar-inverse .navbar-nav > .current-menu-item,
+.navbar-inverse .navbar-nav > .current-menu-item:hover,
+.navbar-inverse .navbar-nav > .current-menu-item:focus {
+    background-color: transparent !important;
+}
+hr {
+    border-color: #9b9b9b;
+}
+.background-inverse {
+}
+#slideshow .item .container {
+    position: relative;
+}
+#slideshow .item .description {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    padding: 30px 15px 40px;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    background: #000;
+    background: -webkit-linear-gradient(
+        bottom,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0)
+    );
+    background: -o-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+    );
+    background: -moz-linear-gradient(
+        center top,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0)
+    );
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+}
+#slideshow .item .description a {
+    color: #fff;
+}
+#slideshow .item .description a:hover {
+    color: #ccc;
+}
+#slideshow .item h3 {
+    margin-top: 0;
+    font-weight: 600;
+}
+.thumb.resize {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding-top: 56.25%;
+    transition: all 0.4s ease 0s;
+    box-shadow: 1px 1px 5px 1px #fff;
+}
+.thumb.resize > .over {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    position: absolute;
+    background: transparent;
+    transition: all 0.2s ease 0s;
+}
+.thumb.resize > img {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.4s ease 0s;
+}
+.resize h3 {
+    position: absolute;
+    z-index: 30;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    font-size: 20px;
+    line-height: 1;
+    color: #eee;
+    font-weight: 600;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    /*transition: all 0.4s ease 0s;*/
+}
+#slideshow .thumb.resize {
+    padding-top: 33.3333%;
+}
+.post-image.header-image .thumb.resize {
+    padding-top: 50%;
+}
+.big-item .resize h3 {
+    margin-top: -13px;
+    font-size: 26px;
+}
+.thumb.resize.hover > .over,
+.thumb.resize:hover > .over {
+    background: rgb(0, 0, 0, 0.4); /*rgb(255, 194, 119, 0.4)*/
+}
+.thumb.resize.hover > h3,
+.thumb.resize:hover > h3 {
+    /*transform: scale(1.2);*/
+    color: #fff;
+}
+.thumb.resize:hover > img {
+    /*transform: scale(1.1);*/
+}
+.owl-theme .owl-nav [class*="owl-"] {
+    font-size: 20px;
+    color: #fafafa;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+.row-padding-sm {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.row-padding-sm > div {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.toolbar h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.form-vertical .row-padding-sm > div {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.row-nopadding {
+    margin-left: 0;
+    margin-right: 0;
+}
+.row-nopadding > div {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar-inverse {
+    transition: all 0.2s ease-in-out;
+}
+.navbar-fixed-top.navbar-inverse {
+    padding-top: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.navbar-fixed-top.navbar-inverse.nav-up {
+    top: -30px;
+}
+.social {
+}
+.breadcrumb {
+    margin: 20px 0;
+}
+.breadcrumb > .term-item + .term-item + .term-item,
+.post-terms > .term-item:nth-child(n + 4) {
+    display: none;
+}
+
+.social > a {
+    font-size: 30px;
+    margin-right: 15px;
+}
+.background-gray {
+    background: #f1f8f1;
+}
+.myblock {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.home .header {
+    max-width: 720px;
+    font-size: 18px;
+    margin: 0 auto;
+}
+.btngrp {
+    margin-top: 10px;
+}
+.home .header hr {
+    max-width: 450px;
+    border-color: #eee;
+}
+.logo_footer {
+}
+.logo_footer img {
+    height: 30px;
+    width: auto;
+    vertical-align: middle;
+}
+.footer-copy p {
+    margin: 0;
+}
+
+.list-inline > li {
+    padding-right: 0;
+    padding-left: 0;
+}
+.list-inline > li + li:before {
+    content: "/\00a0";
+    padding: 0 5px;
+    color: #ccc;
+}
+.fb-icon {
+    color: #4267b2;
+}
+a.logo {
+    display: inline-block;
+}
+.post-list .item {
+    margin: 15px 0;
+}
+.post-list .item .entry-title {
+    margin-top: 10px;
+}
+.topmod-right {
+    float: right;
+    margin-top: 10px;
+}
+.topmod-right .bn-top {
+    display: inline-block;
+}
+.topmod .telephone {
+    float: right;
+    text-align: center;
+    padding: 10px 15px;
+    margin-left: 50px;
+    background: #fffe9c;
+    border-radius: 5px;
+}
+.topmod .telephone .strong {
+    font-size: 24px;
+    line-height: 1.2;
+    color: #555;
+}
+.topmod .telephone > .span {
+    text-align: justify;
+}
+.heading.heading-widget {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.heading.heading-widget span {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #0144b7;
+    background-color: #ffd147;
+    border-radius: 3px;
+    position: relative;
+    font-size: 22px;
+}
+.heading.heading-widget span:before,
+.heading.heading-widget span:after {
+    content: "";
+    background: #ffd147;
+    height: 2px;
+    width: 100px;
+    top: 50%;
+    display: inline-block;
+    position: absolute;
+}
+.heading.heading-widget span:before {
+    left: -100px;
+}
+.heading.heading-widget span:after {
+    right: -100px;
+}
+.homepage-widget {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.homepage-widget#my_widget_recent_posts-3 {
+    background-color: #fafafa;
+}
+
+.post-list .entry-title {
+    font-size: 18px;
+    text-align: center;
+}
+.post-date {
+    font-style: italic;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+.header-widget {
+    position: relative;
+}
+.header-widget .read-all {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.page-header {
+    text-align: center;
+}
+.topmod {
+    background-color: #fbf7ad;
+    padding: 5px 0;
+    font-weight: bold;
+}
+.topmod .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.topmod .company-name {
+    margin-left: 105px;
+    margin-right: auto;
+    display: inline-block;
+}
+.google-translate {
+    padding-left: 10px;
+}
+.topmod .hotline span {
+    color: #d12190;
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 769px) {
+    .navbar.navbar-inverse {
+        border: 0;
+        margin-bottom: 0;
+    }
+    .navbar-brand.active .text,
+    .navbar-brand:hover .text,
+    .navbar-inverse #primary-menu.navbar-nav > li:hover > a,
+    .navbar-inverse #primary-menu.navbar-nav > li:focus > a,
+    .navbar-inverse #primary-menu.navbar-nav > .active > a,
+    .navbar-inverse #primary-menu.navbar-nav > .active:hover > a,
+    .navbar-inverse #primary-menu.navbar-nav > .active:focus > a,
+    .navbar-inverse #primary-menu.navbar-nav > .current-menu-item > a,
+    .navbar-inverse #primary-menu.navbar-nav > .current-menu-item:hover > a,
+    .navbar-inverse #primary-menu.navbar-nav > .current-menu-item:focus > a,
+    .navbar-inverse #primary-menu.navbar-nav > .current-menu-parent > a {
+        background-color: transparent;
+    }
+    .navbar-inverse #primary-menu.navbar-nav > li > a {
+        padding: 15px 0;
+        font-weight: 500;
+        font-size: 14px;
+        color: #fff200;
+        text-transform: uppercase;
+    }
+    .navbar-inverse #primary-menu.navbar-nav > li + li:before {
+        content: "\007c";
+        color: #eee;
+        padding: 0 15px;
+    }
+    .container-sm {
+        max-width: 980px;
+    }
+    .navbar-inverse #primary-menu.navbar-nav > li {
+        margin: 0;
+    }
+    .navbar-inverse .navbar-brand {
+        padding-left: 0;
+        position: relative;
+        z-index: 2;
+        bottom: 50px;
+    }
+    img.logo {
+        width: auto;
+        max-width: 100%;
+        height: 80px;
+    }
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 0;
+    }
+    .mainnav .navbar {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    #mainnav .nav > li > a {
+        display: inline-block;
+    }
+    #mainnav.navbar-collapse {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-inverse .navbar-nav > .open > a,
+    .navbar-inverse .navbar-nav > .open > a:focus,
+    .navbar-inverse .navbar-nav > .open > a:hover {
+        /*
+		background-color: #F2F2F2;
+		color: #555;*/
+    }
+    .navbar-nav > li > .dropdown-menu {
+        min-width: 100%;
+    }
+    #mainnav {
+        position: relative;
+    }
+}
+@media (max-width: 768px) {
+    #primary-menu.navbar-nav li {
+        float: left;
+        width: 50%;
+    }
+    #primary-menu.navbar-nav li:nth-child(2n + 1) {
+        clear: left;
+    }
+    body {
+        padding-top: 50px;
+    }
+    .navbar.navbar-inverse {
+        position: fixed;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        top: 0;
+        border-width: 0 0 1px;
+        padding-top: 0;
+        box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    }
+    .topmod .company-name {
+        display: none;
+    }
+    .topmod {
+        position: fixed;
+        top: 10px;
+        z-index: 1031;
+        left: 70px;
+        right: 60px;
+        background-color: transparent;
+        color: #fff;
+    }
+    .topmod .hotline span {
+        color: #ffd147;
+    }
+    #slideshow .thumb.resize {
+        padding-top: 66.667%;
+    }
+    .header-widget .read-all {
+        top: 80%;
+    }
+}
