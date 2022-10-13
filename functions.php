@@ -19,7 +19,7 @@ function create_posttype_product() {
 			'rewrite' => array('slug' => 'san-pham'),
 			'menu_position' => 6,
 			'has_archive' => true,
-			'supports' => ['title'],
+			'supports' => ['title', 'thumbnail'],
 		)
 	);
 }
@@ -43,8 +43,9 @@ add_action('after_setup_theme', '_setup');
 if (!function_exists('_setup')) {
 	function _setup()
 	{
+		require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
 		remove_action('wp_head', 'wp_generator');
-		// load_theme_textdomain('cit_service', get_template_directory() . '/languages');
 
 		add_theme_support('title-tag');
 		add_theme_support('post-thumbnails');
@@ -131,12 +132,13 @@ if (!function_exists('_widgets_init')) {
 if (!function_exists('_scripts')) {
 	function _scripts()
 	{
-		wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css', [], '3.3.7');
-		wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', [], '4.7.0');
-		wp_enqueue_style('owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css', [], '2.2.1');
-		wp_enqueue_style('jquery-ui-smoothness', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css', [], '1.11.4');
-		wp_enqueue_style('jquery-ui-smoothness-theme', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/theme.min.css', [], '1.11.4');
-		wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', [], '3.5.2');
+		wp_enqueue_style('bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css', [], '4.5.0');
+		wp_enqueue_style('swiper-bundle', get_template_directory_uri(). '/css/swiper-bundle.min.css', [], '8.4.3');
+		// wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', [], '4.7.0');
+		// wp_enqueue_style('owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css', [], '2.2.1');
+		// wp_enqueue_style('jquery-ui-smoothness', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css', [], '1.11.4');
+		// wp_enqueue_style('jquery-ui-smoothness-theme', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/theme.min.css', [], '1.11.4');
+		wp_enqueue_style('animate', get_template_directory_uri().'/css/animate.min.css', [], '4.1.1');
 		wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css', [], '20180505.1');
 		wp_enqueue_style('style', get_template_directory_uri() . '/style.css', [], '191109.2');
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -147,9 +149,9 @@ if (!function_exists('_scripts')) {
 		wp_enqueue_style('googlefonts', $googlefont, [], '20160602.1');
 
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('jquery-ui-datepicker');
-		wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', null, '3.3.7', true);
-		wp_enqueue_script('owl.carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', null, '2.2.1', true);
+		// wp_enqueue_script('jquery-ui-datepicker');
+		wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', null, '4.5.0', true);
+		wp_enqueue_script('bootstswiper-bundle', get_template_directory_uri() . '/js/swiper-bundle.min.js', null, '8.4.3', true);
 		wp_enqueue_script('function', get_template_directory_uri() . '/js/function.js', [], '20180504.3', true);
 		wp_localize_script('__script', 'screenReaderText', array(
 			'expand'   => __('expand child menu', 'cit_service'),
@@ -158,7 +160,18 @@ if (!function_exists('_scripts')) {
 	}
 }
 
-require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/functions.php';
 require get_template_directory() . '/theme-option/option.php';
-// require get_template_directory() . '/widgets/my-widget-recent-posts.php';
+// require get_template_directory() . '/widgets/my-widget-recent-posts.php';add_action( 'admin_init', 'my_remove_menu_pages' );
+function my_remove_menu_pages() {
+	global $user_ID;
+	if(is_admin() && $user_ID != '1'){ //Thay ID người dùng ở đây
+	 remove_menu_page( 'wpcf7' ); 
+	 remove_menu_page( 'plugins.php' ); // Menu Plugins
+	 remove_menu_page( 'users.php' ); // Menu Thành viên
+	 remove_menu_page( 'tools.php' ); // Menu Công cụ
+	 remove_menu_page( 'options-general.php' ); // Menu cài đặt
+	  }
+  }
+  

@@ -78,7 +78,7 @@ if(!function_exists('_bootstrap_pagination'))
 		
 		$args = wp_parse_args(
 			$args, 
-			apply_filters('wp_bootstrap_pagination_defaults', $defaults)
+			apply_filters('_bootstrap_pagination_defaults', $defaults)
 		);
 		
 		$args['range'] =(int) $args['range'] - 1;
